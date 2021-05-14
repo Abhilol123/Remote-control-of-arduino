@@ -1,0 +1,2 @@
+# Remote-control-of-arduino
+An Arduino is used to actuate remote experiments and collect the vibrational data from the experiments. A Node.js program is used to command the Arduino using a JavaScript library, johnny-five.io. An Express server is created and localtunnel.me software is used to tunnel the local server to the internet. Socket.io is used to communicate between the Arduino, server and the clients.
