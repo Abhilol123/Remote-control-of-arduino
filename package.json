@@ -1,0 +1,24 @@
+{
+  "name": "remote-control-of-arduino",
+  "version": "1.0.0",
+  "description": "An Arduino is used to actuate remote experiments and collect the vibrational data from the experiments. A Node.js program is used to command the Arduino using a JavaScript library, johnny-five.io. An Express server is created and localtunnel.me software is used to tunnel the local server to the internet. Socket.io is used to communicate between the Arduino, server and the clients.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhilol123/Remote-control-of-arduino.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhilol123/Remote-control-of-arduino/issues"
+  },
+  "homepage": "https://github.com/Abhilol123/Remote-control-of-arduino#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "johnny-five": "^2.1.0",
+    "socket.io": "^4.4.1"
+  }
+}

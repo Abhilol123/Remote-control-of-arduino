@@ -1,16 +1,18 @@
+const express = require("express");
+const { Board, Servos } = require("johnny-five");
+const socket = require("socket.io");
+
+const app = express();
+
 let servoAngle = 90;
 let servo;
 
-// Server Control
-const express = require("express");
-const app = express();
 const server = app.listen(3000, () => {
     console.log("listening at 3000");
 });
+
 app.use(express.static("public"));
 
-// Arduino Control
-const { Board, Servos } = require("johnny-five");
 const board = new Board();
 board.on("ready", () => {
     servo = new Servos([5, 6]);
@@ -19,8 +21,6 @@ board.on("ready", () => {
     }
 });
 
-// Socket Control
-const socket = require("socket.io");
 const io = socket(server);
 io.sockets.on('connection', (socket) => {
     socket.emit("start", socket.id);
@@ -33,5 +33,3 @@ io.sockets.on('connection', (socket) => {
         }
     });
 });
-
-// lt --port 3000
